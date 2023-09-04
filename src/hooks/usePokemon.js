@@ -28,10 +28,8 @@ const findLastLanguageFlavorText = (flavor_text_entries, lang = 'en') => {
 
 export function usePokemon(inputValue) {
     const [pokemon, setPokemon] = useState(DEFAULT_POKEMON_OBJECT);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
-        console.log('Modo sexo')
         fetch(`${POKEAPI_ENDPOINT}${inputValue}`)
             .then((response) => response.json())
             .then((dataPoke) => {
@@ -58,12 +56,8 @@ export function usePokemon(inputValue) {
                         setPokemon(pokemonData);
                     })
             })
-            .catch((error) => {
-                setError(error)})
-            
-            return(() => console.log('Limpieza bebe'))
     }, [inputValue])
 
-    return { pokemon, error}
+    return { pokemon }
 }
 

@@ -7,11 +7,10 @@ import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';
 import { HeaderCase } from './Components/HeaderCase/HeaderCase';
 
 function App() {
-  console.log('App')
   const [pokemonValue, setPokemonValue] = useState(1);
   const [option, setOption] = useState(0);
 
-  const { pokemon, error } = usePokemon(pokemonValue);
+  const { pokemon } = usePokemon(pokemonValue);
 
   const valueAdd = () => {
     if (pokemon.id < 1008) {

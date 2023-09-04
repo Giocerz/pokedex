@@ -1,7 +1,6 @@
 import './VerticalStats.css'
 
 export const VerticalStats = ({ hp, at, def, specialDefense, specialAttack, speed }) => {
-    console.log('Entre')
     const generateListItems = (value) => {
         const items = [];
         items.push(<span>{value}</span>)

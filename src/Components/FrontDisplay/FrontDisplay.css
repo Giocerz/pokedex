@@ -1,0 +1,70 @@
+.view-section {
+  background-color: #f2f4e8;
+  width: 340px;
+  height: 230px;
+  border-radius: 20px;
+  box-shadow: 9px 4px 0 #481457;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.view-container {
+  background: rgb(0, 215, 252);
+  background: linear-gradient(52deg, rgba(0, 215, 252, 1) 42%, rgba(1, 121, 255, 1) 100%);
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 10px solid #3fc2d5;
+}
+
+.view-container h3 {
+  width: 100%;
+  margin: 0;
+  font-weight: 100;
+  font-size: 1.3em;
+}
+
+.anim-name {
+  border-right: 2px solid black;
+  animation: blink .5s infinite step-end alternate;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+}
+
+.view-section-bottom {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bars-section {
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  align-items: center;
+}
+
+.bars {
+  width: 80px;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #05135b;
+}

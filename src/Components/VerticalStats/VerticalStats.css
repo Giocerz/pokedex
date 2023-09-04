@@ -1,0 +1,42 @@
+.stats-grid {
+  width: 300px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(6, 50px);
+  grid-template-rows: 90px 30px;
+  text-align: center;
+  border: 1px dotted white;
+  border-radius: 10px;
+}
+
+.stats-grid span {
+  font-size: 0.7em;
+}
+
+.stat {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.stat>ul {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  gap: 2.5px;
+}
+
+.stat>ul>li {
+  height: 2.5px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+}

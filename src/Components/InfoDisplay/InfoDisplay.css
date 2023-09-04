@@ -1,0 +1,15 @@
+.info-display {
+  width: 320px;
+  height: 150px;
+  background-color: #0c1956;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info-display p {
+  padding: 10px;
+  height: 100%;
+}

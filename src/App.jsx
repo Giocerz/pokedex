@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react';
-import { usePokemon } from './Hooks/usePokemon';
+import { usePokemon } from './hooks/usePokemon';
 import { FrontDisplay } from './Components/FrontDisplay/FrontDisplay';
 import { DisplayType } from './Components/DisplayType/DisplayType';
 import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';

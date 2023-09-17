@@ -1,12 +1,12 @@
 import './VerticalStats.css'
 
 export const VerticalStats = ({ hp, at, def, specialDefense, specialAttack, speed }) => {
-    const generateListItems = (value) => {
+    const generateListItems = (value, statName) => {
         const items = [];
-        items.push(<span>{value}</span>)
+        items.push(<span key={`span-statName`}>{value}</span>)
         value = Math.ceil(value * (15 / 255));
         for (let i = 0; i < value; i++) {
-            items.push(<li key={i}></li>);
+            items.push(<li key={`${statName}-${i}`}></li>);
         }
         return items;
     };
@@ -15,32 +15,32 @@ export const VerticalStats = ({ hp, at, def, specialDefense, specialAttack, spee
         <div className='stats-grid'>
             <div className='stat hp'>
                 <ul>
-                    {generateListItems(hp)}
+                    {generateListItems(hp, 'hp')}
                 </ul>
             </div>
             <div className='stat attack'>
                 <ul>
-                    {generateListItems(at)}
+                    {generateListItems(at, 'at')}
                 </ul>
             </div>
             <div className='stat defense'>
                 <ul>
-                    {generateListItems(def)}
+                    {generateListItems(def, 'def')}
                 </ul>
             </div>
             <div className='stat special-attack'>
                 <ul>
-                    {generateListItems(specialAttack)}
+                    {generateListItems(specialAttack, 'sa')}
                 </ul>
             </div>
             <div className='stat special-defense'>
                 <ul>
-                    {generateListItems(specialDefense)}
+                    {generateListItems(specialDefense, 'sd')}
                 </ul>
             </div>
             <div className='stat speed'>
                 <ul>
-                    {generateListItems(speed)}
+                    {generateListItems(speed, 'spe')}
                 </ul>
             </div>
             <span>PS</span>

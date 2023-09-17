@@ -1,0 +1,28 @@
+.matrix-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 320px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 20px;
+    gap: 3px;
+    background-color: #0184c2;
+}
+
+.matrix-btn {
+    cursor: pointer;
+    background-color: #00aaf8;
+    border: 0;
+    font-size: medium;
+    color: #005e89;
+}
+
+.matrix-btn.external {
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.matrix-btn:hover {
+    background-color: #4ec7ff;
+}

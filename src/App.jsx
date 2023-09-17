@@ -5,6 +5,7 @@ import { FrontDisplay } from './Components/FrontDisplay/FrontDisplay';
 import { DisplayType } from './Components/DisplayType/DisplayType';
 import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';
 import { HeaderCase } from './Components/HeaderCase/HeaderCase';
+import { MatrixButtons } from './Components/MatrixButtons/MatrixButtons';
 
 function App() {
   const [pokemonValue, setPokemonValue] = useState(1);
@@ -72,18 +73,7 @@ function App() {
         <div className='case right'>
           <div className='lateral-container'>
             <InfoDisplay option={option} description={pokemon.description} stats={pokemon.stats}/>
-            <div className='matrix-buttons'>
-              <button className='matrix-btn' title='description' onClick={() => setOption(0)}><i className="fa-sharp fa-solid fa-file-lines"></i></button>
-              <button className='matrix-btn' title='stats' onClick={() => setOption(1)}><i className="fa fa-bar-chart"></i></button>
-              <button className='matrix-btn'>3</button>
-              <button className='matrix-btn'>4</button>
-              <button className='matrix-btn'>5</button>
-              <button className='matrix-btn'>6</button>
-              <button className='matrix-btn'>7</button>
-              <button className='matrix-btn'>8</button>
-              <button className='matrix-btn'><i className="fa-brands fa-linkedin"></i></button>
-              <button className='matrix-btn'><i className="fa-brands fa-github"></i></button>
-            </div>
+            <MatrixButtons handle={setOption} />
             <div className='case-right-mid-section'>
               {pokemon.types[0]?.type.name ? <DisplayType>{pokemon.types[0]?.type.name}</DisplayType>
                 : <DisplayType></DisplayType>}

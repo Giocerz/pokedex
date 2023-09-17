@@ -221,6 +221,7 @@
 }
 
 .coincidenceSearch {
+  position: absolute;
   width: 180px;
   border-radius: 10px;
   display: grid;

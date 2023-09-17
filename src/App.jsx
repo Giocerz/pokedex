@@ -7,21 +7,23 @@ import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';
 import { HeaderCase } from './Components/HeaderCase/HeaderCase';
 import { MatrixButtons } from './Components/MatrixButtons/MatrixButtons';
 
+const MAX_ID = 1008;
+
 function App() {
   const [pokemonValue, setPokemonValue] = useState(1);
   const [option, setOption] = useState(0);
 
   const { pokemon } = usePokemon(pokemonValue);
 
-  const valueAdd = () => {
-    if (pokemon.id < 1008) {
-      setPokemonValue(pokemon.id + 1);
+  const valueAdd = (value) => {
+    if (pokemon.id < (MAX_ID - value + 1)) {
+      setPokemonValue(pokemon.id + value);
     }
   }
 
-  const valueSubs = () => {
-    if (pokemon.id > 1) {
-      setPokemonValue(pokemon.id - 1);
+  const valueSubs = (value) => {
+    if (pokemon.id > value) {
+      setPokemonValue(pokemon.id - value);
     }
   }
 
@@ -52,17 +54,17 @@ function App() {
                 <input type='submit' value='Go!' />
               </form>
               <div className='cross-buttons'>
-                <button className='cross-btn up' title='up' onClick={valueAdd}>
+                <button className='cross-btn up' title='up' onClick={() => valueAdd(1)}>
                   <i className="fa-solid fa-caret-up"></i>
                 </button>
-                <button className='cross-btn left' title='left'>
+                <button className='cross-btn left' title='left' onClick={() => valueSubs(10)}>
                   <i className="fa-solid fa-caret-left"></i>
                 </button>
                 <div className='cross-center' />
-                <button className='cross-btn right' title='right'>
+                <button className='cross-btn right' title='right' onClick={() => valueAdd(10)}>
                   <i className="fa-solid fa-caret-right"></i>
                 </button>
-                <button className='cross-btn down' title='down' onClick={valueSubs}>
+                <button className='cross-btn down' title='down' onClick={() => valueSubs(1)}>
                   <i className="fa-solid fa-caret-down"></i>
                 </button>
               </div>

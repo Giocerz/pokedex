@@ -17,7 +17,6 @@ export const SearchForm = ({ setPokemonValue }) => {
     }, [])
 
     const handleChange = (event) => {
-        console.log(event.target.value)
         let value = event.target.value;
         setSearchInputValue(value);
         clearTimeout(timeoutFlag);

@@ -52,6 +52,13 @@ function App() {
               <form className='find-pokemon-form' onSubmit={handle}>
                 <input name='numberPokemon' type='text' min={1} max={1000000} placeholder='Search by name or id' required />
                 <input type='submit' value='Go!' />
+                <section className='coincidenceSearch'>
+                  <button>Pikachu</button>
+                  <button>Pikachu</button>
+                  <button>Pikachu</button>
+                  <button>Pikachu</button>
+                  <button>Pikachu</button>
+                </section>
               </form>
               <div className='cross-buttons'>
                 <button className='cross-btn up' title='up' onClick={() => valueAdd(1)}>

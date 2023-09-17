@@ -6,13 +6,13 @@ import { DisplayType } from './Components/DisplayType/DisplayType';
 import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';
 import { HeaderCase } from './Components/HeaderCase/HeaderCase';
 import { MatrixButtons } from './Components/MatrixButtons/MatrixButtons';
+import { SearchForm } from './Components/SearchForm/SearchForm';
 
 const MAX_ID = 1008;
 
 function App() {
   const [pokemonValue, setPokemonValue] = useState(1);
   const [option, setOption] = useState(0);
-
   const { pokemon } = usePokemon(pokemonValue);
 
   const valueAdd = (value) => {
@@ -25,13 +25,6 @@ function App() {
     if (pokemon.id > value) {
       setPokemonValue(pokemon.id - value);
     }
-  }
-
-  const handle = (event) => {
-    event.preventDefault();
-    const inputElement = event.target.elements.numberPokemon;
-    const inputValue = inputElement.value.toLowerCase();
-    setPokemonValue(inputValue);
   }
 
   return (
@@ -49,10 +42,7 @@ function App() {
                 <div className='form-visual-btn-flat green' />
                 <div className='form-visual-btn-flat orange' />
               </div>
-              <form className='find-pokemon-form' onSubmit={handle}>
-                <input name='numberPokemon' type='text' min={1} max={1000000} placeholder='Search by name or id' required />
-                <input type='submit' value='Go!' />
-              </form>
+              <SearchForm setPokemonValue={setPokemonValue} />
               <div className='cross-buttons'>
                 <button className='cross-btn up' title='up' onClick={() => valueAdd(1)}>
                   <i className="fa-solid fa-caret-up"></i>

@@ -62,6 +62,7 @@ function App() {
           </div>
         </div>
         <div className='hinge' />
+        <div className='horizontal-hinge' />
         <div className='case right'>
           <div className='lateral-container'>
             <InfoDisplay option={option} description={pokemon.description} stats={pokemon.stats}/>

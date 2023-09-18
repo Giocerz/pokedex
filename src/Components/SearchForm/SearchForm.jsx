@@ -1,3 +1,4 @@
+import './SearchForm.css'
 import { useState, useEffect } from "react";
 import { filterSuggestedData } from "../../logic/filterSuggestedData";
 

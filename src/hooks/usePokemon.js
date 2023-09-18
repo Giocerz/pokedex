@@ -28,6 +28,7 @@ const findLastLanguageFlavorText = (flavor_text_entries, lang = 'en') => {
 
 export function usePokemon(inputValue) {
     const [pokemon, setPokemon] = useState(DEFAULT_POKEMON_OBJECT);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         fetch(`${POKEAPI_ENDPOINT}${inputValue}`)
@@ -53,11 +54,13 @@ export function usePokemon(inputValue) {
                                 speed: dataPoke.stats[5].base_stat
                             }
                         }
+                        setError(false);
                         setPokemon(pokemonData);
                     })
             })
+            .catch(() => setError(true))
     }, [inputValue])
 
-    return { pokemon }
+    return { pokemon, error }
 }
 

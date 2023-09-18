@@ -7,13 +7,15 @@ import { InfoDisplay } from './Components/InfoDisplay/InfoDisplay';
 import { HeaderCase } from './Components/HeaderCase/HeaderCase';
 import { MatrixButtons } from './Components/MatrixButtons/MatrixButtons';
 import { SearchForm } from './Components/SearchForm/SearchForm';
+import { VerticalHinge } from './Components/Hinges/VerticalHinge';
+import { HorizontalHinge } from './Components/Hinges/HorizontalHinge';
 
 const MAX_ID = 1008;
 
 function App() {
   const [pokemonValue, setPokemonValue] = useState(1);
   const [option, setOption] = useState(0);
-  const { pokemon } = usePokemon(pokemonValue);
+  const { pokemon, error } = usePokemon(pokemonValue);
 
   const valueAdd = (value) => {
     if (pokemon.id < (MAX_ID - value + 1)) {
@@ -33,7 +35,7 @@ function App() {
         <div className='case left'>
           <HeaderCase />
           <div className='main-section'>
-            <FrontDisplay id={pokemon.id} avatar={pokemon.avatar} name={pokemon.name} />
+            <FrontDisplay id={pokemon.id} avatar={pokemon.avatar} name={pokemon.name} error={error} />
             <div className='down-panel-section'>
               <div className='form-visual-btn-section'>
                 <button title='random' onClick={() => {
@@ -61,8 +63,8 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='hinge' />
-        <div className='horizontal-hinge' />
+        <VerticalHinge />
+        <HorizontalHinge />
         <div className='case right'>
           <div className='lateral-container'>
             <InfoDisplay option={option} description={pokemon.description} stats={pokemon.stats}/>

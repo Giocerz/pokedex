@@ -1,0 +1,37 @@
+.hinge {
+    flex-shrink: 0;
+    height: 550px;
+    width: 40px;
+    border-radius: 40px / 20px;
+    background-color: #fd1956;
+    position: relative;
+    border-left: 1px solid #0c1956;
+    border-right: 1px solid #0c1956;
+}
+
+.hinge::before {
+    position: absolute;
+    content: '';
+    height: 540px;
+    width: 10px;
+    left: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #fc8f74;
+}
+
+.hinge::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    height: 20px;
+    width: 40px;
+    background-color: #0c1956;
+    border-radius: 40px / 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .hinge {
+        display: none;
+    }
+}

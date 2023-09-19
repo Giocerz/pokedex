@@ -9,6 +9,7 @@ import { MatrixButtons } from './Components/MatrixButtons/MatrixButtons';
 import { SearchForm } from './Components/SearchForm/SearchForm';
 import { VerticalHinge } from './Components/Hinges/VerticalHinge';
 import { HorizontalHinge } from './Components/Hinges/HorizontalHinge';
+import { CrossButtons } from './Components/CrossButtons/CrossButtons';
 
 const MAX_ID = 1008;
 
@@ -45,21 +46,7 @@ function App() {
                 <div className='form-visual-btn-flat orange' />
               </div>
               <SearchForm setPokemonValue={setPokemonValue} />
-              <div className='cross-buttons'>
-                <button className='cross-btn up' title='up' onClick={() => valueAdd(1)}>
-                  <i className="fa-solid fa-caret-up"></i>
-                </button>
-                <button className='cross-btn left' title='left' onClick={() => valueSubs(10)}>
-                  <i className="fa-solid fa-caret-left"></i>
-                </button>
-                <div className='cross-center' />
-                <button className='cross-btn right' title='right' onClick={() => valueAdd(10)}>
-                  <i className="fa-solid fa-caret-right"></i>
-                </button>
-                <button className='cross-btn down' title='down' onClick={() => valueSubs(1)}>
-                  <i className="fa-solid fa-caret-down"></i>
-                </button>
-              </div>
+              <CrossButtons valueAdd={valueAdd} valueSubs={valueSubs} />
             </div>
           </div>
         </div>

@@ -75,3 +75,19 @@
   margin-bottom: 40px;
   text-align: center;
 }
+
+.pokeball-loading {
+  width: 22px;
+  opacity: 0.8;
+  animation: loadingAnim .8s linear infinite;
+}
+
+@keyframes loadingAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -12,7 +12,10 @@ export const SearchForm = ({ setPokemonValue }) => {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=1008')
             .then((response) => response.json())
             .then((data) => {
-                const pokemonNames = data?.results.map((value) => value?.name);
+                const pokemonNames = data?.results.map((value) => value?.name).filter((value) => {
+                    const re = /male/;
+                    return !re.test(value);
+                }).sort();
                 setPokemonList(pokemonNames)
             })
     }, [])

@@ -46,7 +46,7 @@ function App() {
                 <div className='form-visual-btn-flat orange' />
               </div>
               <SearchForm setPokemonValue={setPokemonValue} />
-      
+              <CrossButtons valueAdd={valueAdd} valueSubs={valueSubs} />
             </div>
           </div>
         </div>

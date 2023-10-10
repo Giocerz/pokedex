@@ -4,7 +4,7 @@
   align-items: flex-end;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 850px) {
   .container {
     flex-wrap: wrap;
   }
